@@ -1,6 +1,6 @@
 # Author:妖怪鱼
 # Date:2024/7/25
-# Introduction:pytorch识别手写文字demo
+# Introduction:pytorch识别手写文字demo(多层感知机)
 
 import torch
 from torch.utils.data import DataLoader
