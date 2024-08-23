@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 plt.rcParams['font.sans-serif']=['SimHei']
 plt.rcParams['axes.unicode_minus']=False
-1
+
 # 这个类定义了一个简单的多层感知机（MLP），包含四个全连接层
 # fc1：输入层到第一个隐藏层（64个神经元）
 # fc2：第一个隐藏层到第二个隐藏层（64个神经元）
@@ -62,7 +62,7 @@ def main():
     test_data = get_data_loader(is_train=False)
     # 初始化神经网络模型
     net = Net()
-    print("initial accuracy:", evaluate(test_data, net))
+    print("初始化准确率:", evaluate(test_data, net))
     # 定义优化器，使用 Adam 优化算法
     optimizer = torch.optim.Adam(net.parameters(), lr=0.001)
     for epoch in range(2):

@@ -46,7 +46,7 @@ with open("./MNIST/raw/train-images-idx3-ubyte", "rb") as file:
     print("处理之后的ascii码列表:",encodelist)
     # np.array(encodelist, dtype=np.uint8)：将 encodelist转换为一个NumPy数组，数据类型为 uint8（无符号8位整数）
     # .reshape(28, 28, 1)：将一维数组重塑为 28x28x1 的三维数组
-    imageMar = np.array(encodelist, dtype=np.uint8).reshape(28, 28, 1)
+    imageMar = np.array(encodelist, dtype=np.uint8).reshape(28, 28, 1)  # 这里的 1 值的是颜色通道为1
     print(imageMar.shape)
     cv2.imwrite("image.png", imageMar)
 
@@ -80,8 +80,7 @@ optimizer = optim.Adam(model.parameters())
 
 # note 定义训练方法
 def train_model(model , device, train_loader, optimizer, epoch):
-    # 模型训练
-    model.train()
+    model.train()  # 设置模型为训练状态
     for batch_index, (data, target) in enumerate(train_loader):
         # 部署到DEVICE
         data, target = data.to(device),target.to(device)
