@@ -3,10 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 from datasets import *
 from transformer import Transformer
+# begin 这里是训练的入口
 
 if __name__ == "__main__":
 
     enc_inputs, dec_inputs, dec_outputs = make_data()
+    print("---------------enc_inputs------------------\n",enc_inputs,"\n")
     loader = Data.DataLoader(MyDataSet(enc_inputs, dec_inputs, dec_outputs), 2, True)
 
     model = Transformer().cuda()
@@ -19,7 +21,7 @@ if __name__ == "__main__":
                                                             # dec_outputs: [batch_size, tgt_len]
 
             enc_inputs, dec_inputs, dec_outputs = enc_inputs.cuda(), dec_inputs.cuda(), dec_outputs.cuda()
-            outputs, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_inputs, dec_inputs)
+            outputs, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_inputs, dec_inputs)   # 得到模型前向传播的结果
                                                             # outputs: [batch_size * tgt_len, tgt_vocab_size]
             loss = criterion(outputs, dec_outputs.view(-1))
             print('Epoch:', '%04d' % (epoch + 1), 'loss =', '{:.6f}'.format(loss))

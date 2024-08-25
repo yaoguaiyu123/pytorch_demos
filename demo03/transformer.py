@@ -2,7 +2,6 @@
 # Date:2024/8/25
 # Introduction:在pytorch中实现transformer
 
-
 import numpy as np
 import torch.nn as nn
 from datasets import *

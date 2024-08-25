@@ -1,6 +1,7 @@
 # Starting Reference: http://nlp.seas.harvard.edu/2018/04/03/attention.html#greedy-decoding
 import torch
 import torch.utils.data as Data
+# begin 这里是数据的初始化
 
 # Encoder_input    Decoder_input        Decoder_output
 sentences = [['我 是 学 生 P', 'S I am a student', 'I am a student E'],         # S: 开始符号
