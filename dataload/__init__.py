@@ -1,0 +1,9 @@
+from .dataload_PAD2020 import load_PAD2020_dataset_10, load_PAD2020_dataset_5
+from .dataload_ISIC2018 import load_isic2018_dataset
+from .dataload_ISIC2017 import load_isic2017_dataset
+from .dataload_ISIC2019 import load_isic2019_dataset_10,load_isic2019_dataset_5
+from .dataload_imagenet100 import load_imageNet100
+from .dataload_imagenet1000 import load_imageNet1000
+
+
+
